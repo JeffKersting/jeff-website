@@ -12,11 +12,12 @@ html{
   align-items: center;
   flex-grow: 2;
   flex-shrink: 2;
+  column-span: all;
 }
 body{
   display: grid;
   grid-template-columns: auto 20% 40% 20% auto;
-  grid-template-rows: 15% 400px 400px 15%;
+  grid-template-rows: 15% 440px 360px 15%;
 }
 
 /*Click count button*/
@@ -42,6 +43,7 @@ body{
   border-radius: 5px;
   font-family: sans-serif;
   animation: bounce 1s infinite alternate;/*linked to bounce animation with @*/
+  outline: 0; /* keeps the blue outline from staying after click */
 }
 @keyframes bounce {   /*button bounce animation*/
   to{transform: scale(1.05);}
@@ -49,19 +51,22 @@ body{
 .clicks:hover{   /*hover over button style transition*/
   background-color: white;
   color: black;
+  cursor: pointer;
 }
 #clickReact{   /*popup text*/
   font-style: oblique;
   font-weight: bolder;
+  outline: 0;
 }
 #buttonDescription{   /*text above button*/
   font-family: fantasy;
 }
 
 /* Grid*/
+
 .gridDisplay{
   display: flex;
-  height: 400px;
+  height: 440px;
   width: 400px;
   background-color: white;
   opacity: 50%;
@@ -69,13 +74,59 @@ body{
   grid-row-start: 2;
   margin: auto;
   flex-wrap: wrap;
+  border-radius: 5px;
 }
 .innerGrid{
   height:40px;
   width:40px;
 }
+.gridBottom{
+  height:40px;
+  width:80px;
+  background-color: grey;
+  opacity: 100%;
+}
 .player{
   height:40px;
   width:40px;
+  background-color: green;
+  border-radius: 5px;
+}
+.pushBlock{
+  height: 40px;
+  width: 40px;
   background-color: blue;
+  border-radius: 5px;
+}
+.endBlock{
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 5px;
+}
+.obstacleBlock{
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  opacity: 25%;
+}
+.restartLevel{
+  display: inline inline-block;
+  width: 75px;
+  font-weight: lighter;
+  background-color: black;
+  color: white;
+  padding: 2px;
+  transition: all 0.3s;
+  border:0.1em solid white;
+  border-radius: 5px;
+  font-family: sans-serif;
+  outline: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+.restartLevel:hover{   /*hover over button style transition*/
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
